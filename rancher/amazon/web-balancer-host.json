@@ -1,8 +1,0 @@
-{
-    "ImageId": "ami-812356e1",
-    "KeyName": "mac-01",
-    "SecurityGroups":   [ "internally-accessible-on-ssh", "web-traffic" ],
-    "SecurityGroupIds": [ "sg-0ffae36a",                  "sg-f7eafd92" ],
-    "InstanceType": "t2.micro",
-    "Placement": { "AvailabilityZone": "us-west-1c" }
-}

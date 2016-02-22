@@ -1,18 +1,28 @@
 Host aws-rancher-admin
 	User rancher
-	Hostname 54.183.204.103
+	Hostname 52.53.215.158
 
-Host aws-rancher-host01
+Host aws-rancher-web-01
 	User rancher
-	Hostname 172.31.13.224
+	Hostname 172.31.13.137
 	ProxyCommand ssh -q -W %h:%p aws-rancher-admin
 
-Host aws-rancher-host02
+Host aws-rancher-app-01
 	User rancher
-	Hostname 172.31.13.225
+	Hostname 172.31.6.171
 	ProxyCommand ssh -q -W %h:%p aws-rancher-admin
 
-Host aws-rancher-host03
+Host aws-rancher-app-02
 	User rancher
-	Hostname 172.31.13.226
+	Hostname 172.31.6.172
+	ProxyCommand ssh -q -W %h:%p aws-rancher-admin
+
+Host aws-rancher-app-03
+	User rancher
+	Hostname 172.31.6.173
+	ProxyCommand ssh -q -W %h:%p aws-rancher-admin
+
+Host aws-rancher-data-01
+	User rancher
+	Hostname 172.31.0.181
 	ProxyCommand ssh -q -W %h:%p aws-rancher-admin

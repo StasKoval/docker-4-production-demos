@@ -12,5 +12,16 @@ function create_data_volume() {
 
 # Creates a host on AWS using the given JSON file:
 function create_host() {
-  aws ec2 run-instances --cli-input-json $1
+  # Use the first argument as the json file path:
+  local JSON_FILE=$1;
+
+  # Use the second argument as the instance count, or default to 1:
+  local INSTANCE_COUNT=${2:-1};
+
+  # Create the instances using the AWS CLI:
+  aws ec2 run-instances \
+    --count $INSTANCE_COUNT \
+    --cli-input-json $JSON_FILE \
+    --output text \
+    --query 'Instances[*].InstanceId'
 }

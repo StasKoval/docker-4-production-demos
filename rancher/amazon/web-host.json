@@ -1,8 +1,8 @@
 {
     "ImageId": "ami-812356e1",
     "KeyName": "mac-01",
-    "SecurityGroups":   [ "rancher-unsecure-admin" ],
-    "SecurityGroupIds": [ "sg-be5149db" ],
+    "SecurityGroups":   [ "rancher-host", "public-web-traffic" ],
+    "SecurityGroupIds": [ "sg-ab524ace",  "sg-39534b5c" ],
     "InstanceType": "t2.micro",
     "Placement": { "AvailabilityZone": "us-west-1c" }
 }

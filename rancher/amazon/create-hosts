@@ -3,17 +3,22 @@ WORK_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$WORK_DIR/functions.sh"
 
-# 1: Create the admin host:
-create_host "file://$WORK_DIR/admin-host.json"
+function pretty_create_host() {
+  echo "================================================================================"
+  echo "$1:";
+  create_host "file://$WORK_DIR/$1.json" $2;
+}
 
-# 2: Create a web-balancer host:
-create_host "file://$WORK_DIR/web-balancer-host.json"
+# 1: Create the admin host:
+pretty_create_host "admin-host"
+
+# 2: Create a web host:
+pretty_create_host "web-host"
 
 # 3: Create 3 app hosts:
-for run in {1..3}
-do
-  create_host "file://$WORK_DIR/app-host.json"
-done
+pretty_create_host "app-host" 3
 
-# 4: Create a Database host:
-#create_host "file://$WORK_DIR/database-host.json"
+# 4: Create a Data host:
+pretty_create_host "data-host"
+
+echo "================================================================================"
