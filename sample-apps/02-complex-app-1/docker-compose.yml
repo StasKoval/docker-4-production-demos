@@ -1,0 +1,25 @@
+---
+web:
+  ports: [ "80:3000" ]
+  labels:
+    io.rancher.scheduler.affinity:host_label: public-http=true
+  tty: true
+  image: rancher/load-balancer-service
+  links: [ "rails:rails" ]
+  stdin_open: true
+rails:
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:host_label: app-host=true
+    io.rancher.container.hostname_override: container_name
+  tty: true
+  image: vovimayhem/rails-docker-demo:latest
+  stdin_open: true
+actioncable:
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:host_label: app-host=true
+    io.rancher.container.hostname_override: container_name
+  tty: true
+  image: vovimayhem/rails-docker-demo:latest
+  stdin_open: true
