@@ -42,3 +42,18 @@ do
   "
 done
 ```
+
+## 2: Adding hosts:
+
+* web-01:
+  * public-http=true
+* app-x:
+  * app-host=true
+* data-x:
+  * data-host=true
+
+## 3: Demos:
+
+### 3.1: Simple demo:
+  * image: vovimayhem/rack-hello-world:latest
+  * io.rancher.container.hostname_override: container_name
