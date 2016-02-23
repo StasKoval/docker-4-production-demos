@@ -1,7 +1,8 @@
 {
     "ImageId": "ami-812356e1",
     "KeyName": "mac-01",
+    "SecurityGroups":   [ "rancher-host" ],
+    "SecurityGroupIds": [ "sg-ab524ace" ],
     "InstanceType": "t2.micro",
-    "Placement": { "AvailabilityZone": "us-west-1c" },
-    "NetworkInterfaces": [ { "DeviceIndex": 0, "AssociatePublicIpAddress": false } ]
+    "Placement": { "AvailabilityZone": "us-west-1c" }
 }
