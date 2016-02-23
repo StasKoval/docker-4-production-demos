@@ -9,6 +9,8 @@
 rancher/amazon/create-hosts
 ```
 
+Then, replace the 'default' security group with the 'rancher-host' security group. 
+
 ### 1.2: Configure your SSH client to access all the hosts
 
 See `client-ssh-config.template` and edit your `~/.ssh/config` file accordingly.
