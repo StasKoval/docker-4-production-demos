@@ -9,7 +9,7 @@
 rancher/amazon/create-hosts
 ```
 
-Then, replace the 'default' security group with the 'rancher-host' security group. 
+Then, replace the 'default' security group with the 'rancher-host' security group.
 
 ### 1.2: Configure your SSH client to access all the hosts
 
@@ -57,5 +57,7 @@ done
 ## 3: Demos:
 
 ### 3.1: Simple demo:
-  * image: vovimayhem/rack-hello-world:latest
+  * rackup hello-world.ru
+  * image: vovimayhem/rack-hello-world:1
   * io.rancher.container.hostname_override: container_name
+  * container port: 9292
