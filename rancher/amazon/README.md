@@ -23,7 +23,7 @@ admin host via SSH:
 ```bash
 ssh aws-rancher-admin '\
   sudo ros config set hostname admin ; \
-  docker pull rancher/server:v0.59.0 ; \
+  docker pull rancher/server ; \
   sudo shutdown -r now \
 '
 ```
@@ -39,7 +39,7 @@ for hostname in web-01 app-01 app-02 app-03 data-01
 do
   ssh aws-rancher-$hostname "\
     sudo ros config set hostname $hostname ; \
-    docker pull rancher/agent:v0.9.2 ; \
+    docker pull rancher/agent ; \
     sudo shutdown -r now \
   "
 done

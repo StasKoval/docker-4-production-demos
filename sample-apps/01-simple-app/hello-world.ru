@@ -15,7 +15,7 @@ body { width: 35em; margin: 0 auto; font-family: Tahoma, Verdana, Arial, sans-se
 </style>
 </head>
 <body>
-<h1>Hello world! Version: 1</h1>
+<h1>Hello world! Version: 2</h1>
 <p><strong>Hostname:</strong> #{Socket.gethostname}</p>
 </body>
 </html>

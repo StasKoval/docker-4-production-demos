@@ -1,0 +1,40 @@
+---
+provider: aws
+
+security-groups:
+  docker-ucp-controller:
+    description: "Rules for Docker UCP Controller hosts"
+    inbound:
+      - port: 22
+        protocol: tcp
+        ip: 0.0.0.0/0
+      - port: 80
+        protocol: tcp
+        ip: 0.0.0.0/0
+      - port: 443
+        protocol: tcp
+        ip: 0.0.0.0/0
+  docker-ucp-replica:
+    description: "Rules for Docker UCP Controller hosts"
+    inbound:
+      - port: 22
+        protocol: tcp
+        ip: 0.0.0.0/0
+      - port: 80
+        protocol: tcp
+        ip: 0.0.0.0/0
+      - port: 443
+        protocol: tcp
+        ip: 0.0.0.0/0
+
+hosts:
+  controller:
+    image-id: ami-812356e1
+    instance-type: t2.micro
+    count: 1
+    security-groups: [ "docker-ucp-controller" ]
+  web:
+    image-id: ami-812356e1
+    instance-type: t2.micro
+    count: 1
+    security-groups: [ "docker-ucp-controller" ]
